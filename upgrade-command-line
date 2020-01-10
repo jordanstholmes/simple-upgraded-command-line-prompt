@@ -1,0 +1,40 @@
+# Add a .prompt file to home directory for settings that will be sourced in .bash_profile
+
+if [ -f "${HOME}/.prompt" ]
+then
+  echo "A '.prompt' file already exists in the home directory!"
+  echo "Skipping the creation of a new '.prompt' file."
+  echo "Without creating this file, most of the script will be pointless."
+  echo "Aborting script."
+  exit 1
+else
+  echo "Adding a '.prompt' file to the home directory."
+  cp "./.prompt" "${HOME}/.prompt"
+  echo "'.prompt' created!"
+fi
+
+# Add to .bash_profile
+
+if [ ! -f "${HOME}/.bash_profile" ]
+then
+  echo "No '.bash_profile' file in home directory."
+  echo "Creating a file '.bash_profile' in the home directory."
+  cp "./add-to-bash-profile.bash" "${HOME}/.bash_profile" && echo "'.bash_profile created!"
+else
+  echo "Found '.bash_profile' file in home directory!"
+  cat "./add-to-bash-profile.bash" >> "${HOME}/.bash_profile"
+fi
+
+# Add .inputrc file to home directory
+
+if [ -f "${HOME}/.inputrc" ]
+then
+  echo "An '.inputrc' file already exists in the home directory!"
+  echo "Skipping the creation of a new .inputrc file."
+else
+  echo "Adding an .inputrc file to add various quality of life command-line settings."
+  cp "./inputrc" "${HOME}/.inputrc"
+  echo "'.inputrc' created!"
+fi
+
+echo "Changes complete. Please open a new terminal for changes to take effect."
