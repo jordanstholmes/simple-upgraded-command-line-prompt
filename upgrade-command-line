@@ -33,7 +33,7 @@ then
   echo "Skipping the creation of a new .inputrc file."
 else
   echo "Adding an .inputrc file to add various quality of life command-line settings."
-  cp "./inputrc" "${HOME}/.inputrc"
+  cp "./.inputrc" "${HOME}/.inputrc"
   echo "'.inputrc' created!"
 fi
 
