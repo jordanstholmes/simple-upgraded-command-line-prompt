@@ -1,3 +1,4 @@
+#!/bin/bash
 # Add a .prompt file to home directory for settings that will be sourced in .bash_profile
 
 if [ -f "${HOME}/.prompt" ]

@@ -1,3 +1,4 @@
+#!/bin/bash
 ####### CONFIGURE COMMAND LINE PROMPT ########
 # This file should be placed in your home directory (or the directory where your "bash_profile" is).
 # This file should be "sourced" in your bash_profile, in order to run the commands below when you open a terminal.
@@ -12,14 +13,13 @@ parse_git_branch() {
 
 #### style command line prompt ####
 
-newline="\n"
-
 # \[\e[ = start format info
 # format will extend from then until it hits a clear >> [\e[00m\]
 # 1;38;5 >> the '1' is for bold, the '38;5' says the upcoming color code is for foreground
 # the 33 is the color code from the 256 color set
 # m\] = end the format info
 # green="\[\e[1;38;5;50m\]"
+newline="\n"
 blue="\[\e[1;38;5;33m\]"
 yellow="\[\e[1;38;5;220m\]"
 clear="\[\e[00m\]"
